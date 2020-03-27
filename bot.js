@@ -1,5 +1,6 @@
 // NO TE DUERMAS
 const http = require("http");
+  //npm install express
 const express = require("express");
 const app = express();
 
@@ -25,6 +26,7 @@ function manejarRol(nombreRol, message){
 
 
 // MODELO VISTA CONTROLADOR
+  //npm install discord.js@11.4.2
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
