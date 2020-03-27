@@ -52,10 +52,8 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-  if (message.content == "ping"){
-    message.reply("pong");
-  } 
-  else if (message.content.toLowerCase() == "//leagueoflegends") {
+
+  if (message.content.toLowerCase() == "//leagueoflegends") {
     manejarRol(message, "League of Legends");
   }
   else if(message.content.toLowerCase() == "//animalcrossing"){
