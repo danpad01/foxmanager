@@ -11,7 +11,20 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
-//NO TE DUERMAS END
+
+
+// LOGICA DE NEGOCIO
+function manejarRol(nombreRol, message){
+  var role = message.guild.roles.find(role => role.name === nombreRol);
+    if(message.member.roles.has(role.id)) {
+      message.member.removeRole(role);
+    } else {
+      message.member.addRole(role);
+    }
+}
+
+
+// MODELO VISTA CONTROLADOR
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -26,11 +39,12 @@ client.on("message", message => {
     message.reply("pong");
   } 
   else if (message.content == "!naranja") {
-    //ROL NARANJA ID: 692737252954079283
-    var naranja = "692737252954079283";
-    var usuario = message.member;
-
+    manejarRol("Rol naranja", message)
   }
+  else if(message.content == "!Animal Crossing"){
+    manejarRol("AnimalCrossing", message);
+  }
+  
 });
 
 client.login(discord_token);
