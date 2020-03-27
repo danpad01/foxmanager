@@ -48,6 +48,7 @@ const client = new Discord.Client();
 const discord_token = process.env.TOKEN;
 
 client.on("ready", () => {
+  client.user.setGame('//help para ayuda');
   console.log("Connected!");
 });
 
