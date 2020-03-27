@@ -26,14 +26,14 @@ function manejarRol(message, nombreRol){
 
 
 function imprimirAyuda(message){
-  var ayuda = "```Comandos:\n//help - Lista de comandos disponibles \n" +
-              "//leagueoflegends - Añade al usuario a la comunidad de League of Legends\n" +
-              "//animalcrossing  - Añade al usuario a la comunidad de Animal Crossing\n" +
-              "//callofduty      - Añade al usuario a la comunidad de Call of Duty\n" +
-              "//apex            - Añade al usuario a la comunidad de Apex\n" +
-              "//minecraft       - Añade al usuario a la comunidad de Minecraft\n" +
-              "//blackdesert     - Añade al usuario a la comunidad de Black Desert\n" +
-              "//kurtzpel        - Añade al usuario a la comunidad de Kurtzpel\n" +
+  var ayuda = "```Comandos:\n//help            - Lista de comandos disponibles \n" +
+              "//leagueoflegends - Añade/Elimina al usuario a la comunidad de League of Legends\n" +
+              "//animalcrossing  - Añade/Elimina al usuario a la comunidad de Animal Crossing\n" +
+              "//callofduty      - Añade/Elimina al usuario a la comunidad de Call of Duty\n" +
+              "//apex            - Añade/Elimina al usuario a la comunidad de Apex\n" +
+              "//minecraft       - Añade/Elimina al usuario a la comunidad de Minecraft\n" +
+              "//blackdesert     - Añade/Elimina al usuario a la comunidad de Black Desert\n" +
+              "//kurtzpel        - Añade/Elimina al usuario a la comunidad de Kurtzpel\n" +
               "Bot creado por El Pato Cuak#4773```";
       
   message.channel.send(ayuda);
