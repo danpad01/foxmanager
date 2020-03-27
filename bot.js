@@ -1,5 +1,6 @@
 // NO TE DUERMAS
 const http = require("http");
+  //npm install express
 const express = require("express");
 const app = express();
 
@@ -14,7 +15,7 @@ setInterval(() => {
 
 
 // LOGICA DE NEGOCIO
-function manejarRol(nombreRol, message){
+function manejarRol(message, nombreRol){
   var role = message.guild.roles.find(role => role.name === nombreRol);
     if(message.member.roles.has(role.id)) {
       message.member.removeRole(role);
@@ -24,7 +25,23 @@ function manejarRol(nombreRol, message){
 }
 
 
+function imprimirAyuda(message){
+  var ayuda = "```Comandos:\n//help - Lista de comandos disponibles \n" +
+              "//leagueoflegends - Añade al usuario a la comunidad de League of Legends\n" +
+              "//animalcrossing  - Añade al usuario a la comunidad de Animal Crossing\n" +
+              "//callofduty      - Añade al usuario a la comunidad de Call of Duty\n" +
+              "//apex            - Añade al usuario a la comunidad de Apex\n" +
+              "//minecraft       - Añade al usuario a la comunidad de Minecraft\n" +
+              "//blackdesert     - Añade al usuario a la comunidad de Black Desert\n" +
+              "//kurtzpel        - Añade al usuario a la comunidad de Kurtzpel\n" +
+              "Bot creado por El Pato Cuak#4773```";
+      
+  message.channel.send(ayuda);
+}
+
+
 // MODELO VISTA CONTROLADOR
+  //npm install discord.js@11.4.2
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -38,11 +55,29 @@ client.on("message", message => {
   if (message.content == "ping"){
     message.reply("pong");
   } 
-  else if (message.content == "!naranja") {
-    manejarRol("Rol naranja", message)
+  else if (message.content.toLowerCase() == "//leagueoflegends") {
+    manejarRol(message, "League of Legends");
   }
-  else if(message.content == "!Animal Crossing"){
-    manejarRol("AnimalCrossing", message);
+  else if(message.content.toLowerCase() == "//animalcrossing"){
+    manejarRol(message, "Animal Crossing");
+  }
+  else if (message.content.toLowerCase() == "//callofduty") {
+    manejarRol(message, "Call of Duty");
+  }
+  else if (message.content.toLowerCase() == "//apex") {
+    manejarRol(message, "Apex");
+  }
+  else if (message.content.toLowerCase() == "//minecraft") {
+    manejarRol(message, "Minecraft");
+  }
+  else if (message.content.toLowerCase() == "//blackdesert") {
+    manejarRol(message, "Black Desert");
+  }
+  else if (message.content.toLowerCase() == "//kurtzpel") {
+    manejarRol(message, "Kurtzpel");
+  }
+  else if (message.content.toLowerCase() == "//help") {
+    imprimirAyuda(message);
   }
   
 });
